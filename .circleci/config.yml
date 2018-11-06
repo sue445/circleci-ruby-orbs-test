@@ -1,0 +1,27 @@
+version: 2.1
+
+orbs:
+  sue445-bundle-install: sue445/bundle-install@volatile
+
+jobs:
+  smoke_test:
+    docker:
+      - image: circleci/ruby:2.5
+    working_directory: ~/app
+    steps:
+      - checkout
+
+      - sue445-bundle-install/bundle-install:
+          cache_key_prefix: "v1-bundle"
+          bundle_jobs: 4
+          bundle_retry: 3
+          bundle_path: "vendor/bundle"
+          bundle_clean: true
+          restore_bundled_with: true
+
+workflows:
+  version: 2
+
+  smoke_test:
+    jobs:
+      - smoke_test
