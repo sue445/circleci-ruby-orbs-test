@@ -19,9 +19,30 @@ jobs:
           bundle_clean: true
           restore_bundled_with: true
 
+  branch_cleaner:
+    docker:
+      - image: circleci/ruby:2.5
+    working_directory: ~/app
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+          - "c0:a3:f0:56:75:7f:b0:4d:d1:19:39:08:0e:0e:5a:31"
+      - run: ruby .circleci/branch_cleaner.rb
+
 workflows:
   version: 2
 
   smoke_test:
     jobs:
       - smoke_test
+
+  branch_cleaner:
+    triggers:
+      - schedule:
+          cron: "0 0,12 * * *"
+          filters:
+            branches:
+              only: master
+    jobs:
+      - branch_cleaner
