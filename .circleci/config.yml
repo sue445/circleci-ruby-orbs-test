@@ -1,17 +1,17 @@
 version: 2.1
 
 orbs:
-  sue445-bundle-install: sue445/bundle-install@volatile
+  ruby-orbs: sue445/ruby-orbs@volatile
 
 jobs:
-  smoke_test:
+  bundle-install-test:
     docker:
       - image: circleci/ruby:2.5
     working_directory: ~/app
     steps:
       - checkout
 
-      - sue445-bundle-install/bundle-install:
+      - ruby-orbs/bundle-install:
           cache_key_prefix: "v1-bundle"
           bundle_jobs: 4
           bundle_retry: 3
@@ -35,7 +35,7 @@ workflows:
 
   smoke_test:
     jobs:
-      - smoke_test
+      - bundle-install-test
 
   branch_cleaner:
     triggers:
