@@ -16,6 +16,7 @@ jobs:
           bundle_jobs: 4
           bundle_retry: 3
           bundle_path: "vendor/bundle"
+          bundle_gemfile: "Gemfile"
           bundle_clean: true
           restore_bundled_with: true
 
