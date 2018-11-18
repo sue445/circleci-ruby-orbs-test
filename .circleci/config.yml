@@ -34,9 +34,19 @@ jobs:
 workflows:
   version: 2
 
-  smoke_test:
+  smoke_test-bundle-install:
     jobs:
       - bundle-install-test
+
+  smoke-test-bundle-update-pr:
+    jobs:
+      - ruby-orbs/bundle-update-pr:
+          image: "circleci/ruby:2.5"
+          pre-bundle-update-pr:
+            - run:
+                name: "Set timezone to Asia/Tokyo"
+                command: sudo cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+          assignees: "sue445-test"
 
   branch_cleaner:
     triggers:
