@@ -46,6 +46,7 @@ workflows:
             - run:
                 name: "Set timezone to Asia/Tokyo"
                 command: sudo cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+            - ruby-orbs/bundle-install
           assignees: "sue445-test"
 
   branch_cleaner:
@@ -73,3 +74,4 @@ workflows:
             - run:
                 name: "Set timezone to Asia/Tokyo"
                 command: "sudo timedatectl set-timezone Asia/Tokyo"
+            - ruby-orbs/bundle-install
