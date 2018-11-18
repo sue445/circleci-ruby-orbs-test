@@ -34,12 +34,9 @@ jobs:
 workflows:
   version: 2
 
-  smoke_test-bundle-install:
+  smoke_test:
     jobs:
       - bundle-install-test
-
-  smoke-test-bundle-update-pr:
-    jobs:
       - ruby-orbs/bundle-update-pr:
           image: "circleci/ruby:2.5"
           pre-bundle-update-pr:
