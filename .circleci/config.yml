@@ -57,3 +57,19 @@ workflows:
               only: master
     jobs:
       - branch_cleaner
+
+  nightly:
+    triggers:
+      - schedule:
+          cron: "00 10 * * 5"
+          filters:
+            branches:
+              only: master
+
+    jobs:
+      - ruby-orbs/bundle-update-pr:
+          image: "circleci/ruby:2.5"
+          pre-bundle-update-pr:
+            - run:
+                name: "Set timezone to Asia/Tokyo"
+                command: "sudo timedatectl set-timezone Asia/Tokyo"
