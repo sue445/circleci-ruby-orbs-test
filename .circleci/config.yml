@@ -70,5 +70,5 @@ workflows:
           pre-bundle-update-pr:
             - run:
                 name: "Set timezone to Asia/Tokyo"
-                command: "sudo timedatectl set-timezone Asia/Tokyo"
+                command: sudo cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
             - ruby-orbs/bundle-install
