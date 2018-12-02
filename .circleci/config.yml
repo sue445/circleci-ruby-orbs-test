@@ -46,15 +46,15 @@ workflows:
             - ruby-orbs/bundle-install
           assignees: "sue445-test"
 
-  branch_cleaner:
-    triggers:
-      - schedule:
-          cron: "0 0,12 * * *"
-          filters:
-            branches:
-              only: master
-    jobs:
-      - branch_cleaner
+  # branch_cleaner:
+  #   triggers:
+  #     - schedule:
+  #         cron: "0 0,12 * * *"
+  #         filters:
+  #           branches:
+  #             only: master
+  #   jobs:
+  #     - branch_cleaner
 
   nightly:
     triggers:
