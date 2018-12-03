@@ -29,7 +29,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
           - "c0:a3:f0:56:75:7f:b0:4d:d1:19:39:08:0e:0e:5a:31"
-      - run: ruby .circleci/branch_cleaner.rb
+      - run: ruby .circleci/branch_cleaner.rb 12
 
 workflows:
   version: 2

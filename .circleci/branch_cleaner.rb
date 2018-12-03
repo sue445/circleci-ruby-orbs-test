@@ -1,5 +1,7 @@
 require "time"
 
+BRANCH_KEEP_HOURS = (ARGV[0] || 12).to_i
+
 # 1 hour
 HOUR_SEC = 60 * 60
 
@@ -8,7 +10,7 @@ HOUR_SEC = 60 * 60
   [branch_name.gsub("origin/", ""), Time.at(unixtime.to_i)]
 end.select do |_branch_name, committer_at|
   # Remove old branch
-  Time.now - committer_at > HOUR_SEC * 12
+  Time.now - committer_at > HOUR_SEC * BRANCH_KEEP_HOURS
 end.each do |branch_name, _committer_at|
   system "git push --delete origin #{branch_name}"
 end
