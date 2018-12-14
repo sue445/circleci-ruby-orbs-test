@@ -8,7 +8,7 @@ GEM
       tzinfo (~> 1.1)
     concurrent-ruby (1.1.3)
     hashie (3.6.0)
-    i18n (1.1.1)
+    i18n (1.2.0)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     rubicure (1.1.7)
@@ -27,4 +27,4 @@ DEPENDENCIES
   rubicure
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
