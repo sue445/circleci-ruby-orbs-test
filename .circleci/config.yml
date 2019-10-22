@@ -45,6 +45,7 @@ workflows:
                 command: sudo cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
             - ruby-orbs/bundle-install
           assignees: "sue445-test"
+          git_user_name:  "CircleCI bundle updater"
 
   branch_cleaner:
     triggers:
@@ -72,3 +73,5 @@ workflows:
                 name: "Set timezone to Asia/Tokyo"
                 command: sudo cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
             - ruby-orbs/bundle-install
+          assignees: "sue445"
+          git_user_name:  "CircleCI bundle updater"
