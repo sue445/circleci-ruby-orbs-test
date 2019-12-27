@@ -18,7 +18,7 @@ GEM
       sengiri_yaml (>= 0.0.2)
     sengiri_yaml (0.0.3)
     thread_safe (0.3.6)
-    tzinfo (1.2.5)
+    tzinfo (1.2.6)
       thread_safe (~> 0.1)
     zeitwerk (2.2.2)
 
