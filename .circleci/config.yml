@@ -6,7 +6,7 @@ orbs:
 jobs:
   bundle-install-test:
     docker:
-      - image: circleci/ruby:2.5
+      - image: circleci/ruby:2.7
     working_directory: ~/app
     steps:
       - checkout
@@ -22,7 +22,7 @@ jobs:
 
   branch_cleaner:
     docker:
-      - image: circleci/ruby:2.5
+      - image: circleci/ruby:2.7
     working_directory: ~/app
     steps:
       - checkout
@@ -38,7 +38,7 @@ workflows:
     jobs:
       - bundle-install-test
       - ruby-orbs/bundle-update-pr:
-          image: "circleci/ruby:2.5"
+          image: "circleci/ruby:2.7"
           pre-bundle-update-pr:
             - run:
                 name: "Set timezone to Asia/Tokyo"
@@ -67,7 +67,7 @@ workflows:
 
     jobs:
       - ruby-orbs/bundle-update-pr:
-          image: "circleci/ruby:2.5"
+          image: "circleci/ruby:2.7"
           pre-bundle-update-pr:
             - run:
                 name: "Set timezone to Asia/Tokyo"
