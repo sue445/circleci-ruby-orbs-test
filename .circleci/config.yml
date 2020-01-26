@@ -11,6 +11,9 @@ jobs:
     steps:
       - checkout
 
+      - run: ruby -v
+      - run: bundle -v
+
       - ruby-orbs/bundle-install:
           cache_key_prefix: "v1-bundle"
           bundle_jobs: 4
