@@ -8,7 +8,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
     concurrent-ruby (1.1.5)
-    hashie (4.0.0)
+    hashie (4.1.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     minitest (5.14.0)
