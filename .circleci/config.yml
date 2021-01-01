@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  ruby-orbs: sue445/ruby-orbs@volatile
+  ruby-orbs: sue445/ruby-orbs@dev:e8fedd61173a19a5432b97ae184aa6f80d756043
 
 jobs:
   bundle-install-test:
